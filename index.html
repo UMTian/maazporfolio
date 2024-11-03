@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    
+    <!-- Link Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!-- Link File CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <nav>
+                <a href="#" class="logo">MAAZ</a>
+
+                <div class="nav-links">
+                    <a class="active" href="#" onclick="showSection('home')">Home</a>
+                    <a href="#" onclick="showSection('skills')">Skills</a>
+                    <a href="#" onclick="showSection('projects')">Projects</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </div>
+            </nav>
+
+            <div class="content">
+                <div id="home" class="div-text">
+                    <h1>Hi, I'am Maaz Umar</h1>
+                    <h4>data scientist</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Labore reprehenderit veritatis aperiam sed alias quos. Aliquid vero autem sapiente aspernatur?</p>
+                    <a href="#" class="btn">My Works</a>
+                </div>
+
+                <div id="skills" class="div-text" style="display:none;">
+                    <h1>Skills</h1>
+                    <ul>
+                        <li>EDA</li>
+                        <li>OOP</li>
+                        <li>Python</li>
+                        <li>Database</li>
+                        <li>NUMPY</li>
+                        <li>Pandas</li>
+                    </ul>
+                </div>
+
+                <div id="projects" class="div-text" style="display:none;">
+                    <h1>Projects</h1>
+                    <p>made a digital clock</p>
+                    <p>made a student managemnet system</p>
+                    <p>made a career recommendor system</p>
+                    <p>made a hospital managemnt system</p>
+                </div>
+
+                <div class="div-img">
+                    <img src="hero.png" alt="">
+                </div>
+            </div>
+
+            <div class="soc-link">
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.div-text').forEach(div => {
+                div.style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(section).style.display = 'block';
+
+            // Update the active link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`.nav-links a[onclick="showSection('${section}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
